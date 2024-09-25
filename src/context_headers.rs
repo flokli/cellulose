@@ -109,8 +109,6 @@ mod tests {
                 .expect("unable to construct HeaderValue"),
         );
 
-        dbg!(&hm);
-
         assert_eq!(
             Value::Map(Map {
                 map: Arc::new(HashMap::from_iter([

@@ -105,13 +105,13 @@ async fn auth(
         context
             .add_variable(
                 "request_headers",
-                dbg!(context_headers::parse_headers(rq.headers().to_owned())),
+                context_headers::parse_headers(rq.headers().to_owned()),
             )
             .expect("add request_headers must not fail");
 
         // add JWT-related fields
         context
-            .add_variable("jwt_claims", dbg!(jwt_claims))
+            .add_variable("jwt_claims", jwt_claims)
             .expect("add jwt_claims must not fail");
 
         context
